@@ -1,4 +1,6 @@
 library tetris;
 
-part 'src/model/block.dart';
+part 'src/enums/direction.dart';
+part 'src/model/tetromino.dart';
+part 'src/model/tetrominos.dart';
 part 'src/model/tile.dart';
