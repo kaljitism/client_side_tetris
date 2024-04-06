@@ -30,27 +30,27 @@ class Game {
   void getRandomTetromino() {
     final int random = Random().nextInt(7);
     final tetrominoValue = TetrominoBlock.values[random];
-    switch (TetrominoBlock) {
+    switch (tetrominoValue) {
       case TetrominoBlock.I:
-        currentBlock = ITetromino();
+        currentBlock = ITetromino(width: width);
         break;
       case TetrominoBlock.O:
-        currentBlock = OTetromino();
+        currentBlock = OTetromino(width: width);
         break;
       case TetrominoBlock.T:
-        currentBlock = TTetromino();
+        currentBlock = TTetromino(width: width);
         break;
       case TetrominoBlock.S:
-        currentBlock = STetromino();
+        currentBlock = STetromino(width: width);
         break;
       case TetrominoBlock.Z:
-        currentBlock = ZTetromino();
+        currentBlock = ZTetromino(width: width);
         break;
       case TetrominoBlock.J:
-        currentBlock = JTetromino();
+        currentBlock = JTetromino(width: width);
         break;
       case TetrominoBlock.L:
-        currentBlock = LTetromino();
+        currentBlock = LTetromino(width: width);
         break;
       default:
         throw Exception('Invalid Tetromino');

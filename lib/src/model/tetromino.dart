@@ -1,9 +1,9 @@
 part of '../../tetris.dart';
 
 class Tetromino {
-  late final List<Tile> tiles;
-  late final Tile axisOfRotationTile;
-  late final String color;
+  late List<Tile> tiles;
+  late Tile axisOfRotationTile;
+  late String color;
 
   Tetromino(this.tiles, this.axisOfRotationTile, this.color);
 
