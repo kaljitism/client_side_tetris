@@ -82,7 +82,7 @@ class Game {
   }
 
   bool validMove() {
-    for (Tile tile in currentTetromino!.tiles) {
+    for (Tile tile in currentTetromino.tiles) {
       if (tile.x < 0 || tile.y < 0 || tile.x >= width || tile.y >= height) {
         return false;
       }
@@ -93,34 +93,34 @@ class Game {
   bool movePiece(Movement movement) {
     bool isMoving = true;
     ctx.fillStyle = 'grey' as JSAny;
-    currentTetromino?.tiles.asMap().forEach((_, Tile tile) {
+    currentTetromino.tiles.asMap().forEach((_, Tile tile) {
       ctx.fillRect(tile.x * cellSize, tile.y * cellSize, cellSize, cellSize);
     });
     if (movement == Movement.rotate) {
-      currentTetromino?.rotateRight();
+      currentTetromino.rotateRight();
     } else {
-      currentTetromino?.move(Movement.down);
+      currentTetromino.move(Movement.down);
     }
 
     if (!(isMoving == validMove())) {
-      if (movement == Movement.rotate) currentTetromino?.rotateLeft();
-      if (movement == Movement.down) currentTetromino?.move(Movement.up);
-      if (movement == Movement.up) currentTetromino?.move(Movement.down);
-      if (movement == Movement.left) currentTetromino?.move(Movement.right);
-      if (movement == Movement.right) currentTetromino?.move(Movement.left);
+      if (movement == Movement.rotate) currentTetromino.rotateLeft();
+      if (movement == Movement.down) currentTetromino.move(Movement.up);
+      if (movement == Movement.up) currentTetromino.move(Movement.down);
+      if (movement == Movement.left) currentTetromino.move(Movement.right);
+      if (movement == Movement.right) currentTetromino.move(Movement.left);
     }
 
-    ctx.fillStyle = currentTetromino!.color as JSAny;
-    currentTetromino?.tiles.asMap().forEach((_, Tile tile) {
+    ctx.fillStyle = currentTetromino.color as JSAny;
+    currentTetromino.tiles.asMap().forEach((_, Tile tile) {
       ctx.fillRect(tile.x * cellSize, tile.y * cellSize, cellSize, cellSize);
     });
     return isMoving;
   }
 
   void gameLoop(Timer timer) {
-    gameScore?.setHTML("<p>Score: $linesCleared Lines</p>");
+    gameScore.setHTML("<p>Score: $linesCleared Lines</p>");
     if (!movePiece(Movement.down)) {
-      currentTetromino?.tiles.asMap().forEach((_, Tile tile) {
+      currentTetromino.tiles.asMap().forEach((_, Tile tile) {
         boardState[tile.x][tile.y] = 1;
         rowState[tile.y]++;
       });
