@@ -1,8 +1,5 @@
-import 'package:web/helpers.dart';
+import 'package:client_side_tetris/tetris.dart';
 
 void main() {
-  final now = DateTime.now();
-  final element = document.querySelector('#output') as HTMLDivElement;
-  element.text = 'The time is ${now.hour}:${now.minute}:${now.second}'
-      ' and your Dart web app is running!';
+  Game().startGame();
 }
