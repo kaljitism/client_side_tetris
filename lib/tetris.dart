@@ -1,8 +1,11 @@
 library tetris;
 
-import 'package:web/web.dart';
+import 'dart:math';
+
+import 'package:web/web.dart.dart';
 
 part 'src/enums/direction.dart';
+part 'src/enums/tetromino.dart';
 part 'src/game.dart';
 part 'src/model/tetromino.dart';
 part 'src/model/tetrominos.dart';
