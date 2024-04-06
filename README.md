@@ -6,6 +6,10 @@ This repository is created in order to Client Side Programming in Dart without u
 
 ## Running and building
 
+If you are using IntelliJ/ Android Studio, choose new configuration as Dart Web and set the root `index.html` in the configuration as `web/index.html`
+
+![Run/ Build Configurations](img.png)
+
 To run the app, use these commands:
 ```
 dart pub global activate webdev
