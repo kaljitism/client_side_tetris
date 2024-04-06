@@ -1,3 +1,3 @@
 part of '../../tetris.dart';
 
-enum Direction { left, right, up, down }
+enum Movement { left, right, up, down, rotate }

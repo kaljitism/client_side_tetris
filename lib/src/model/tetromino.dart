@@ -7,19 +7,21 @@ class Tetromino {
 
   Tetromino(this.tiles, this.axisOfRotationTile, this.color);
 
-  void move(Direction direction) {
+  void move(Movement direction) {
     switch (direction) {
-      case Direction.left:
+      case Movement.left:
         tiles.asMap().forEach((index, tile) => tile.x--);
         break;
-      case Direction.right:
+      case Movement.right:
         tiles.asMap().forEach((index, tile) => tile.x++);
         break;
-      case Direction.down:
+      case Movement.down:
         tiles.asMap().forEach((index, tile) => tile.y++);
         break;
-      case Direction.up:
+      case Movement.up:
         tiles.asMap().forEach((index, tile) => tile.y--);
+      case Movement.rotate:
+        break;
     }
   }
 
