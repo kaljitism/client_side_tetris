@@ -143,4 +143,29 @@ class Game {
     ctx.fillStyle = 'grey' as JSAny;
     ctx.fillRect(0, 0, board.width, board.height);
   }
+
+  void handleKeyboard(Timer timer) {
+    window.onKeyDown.listen((event) {
+      if (timer.isActive) {
+        if (event.keyCode == 37) movePiece(Movement.left);
+        if (event.keyCode == 38) movePiece(Movement.rotate);
+        if (event.keyCode == 39) movePiece(Movement.right);
+        if (event.keyCode == 40) movePiece(Movement.down);
+        if (event.keyCode == 32) while (movePiece(Movement.down)) {}
+      }
+    });
+  }
+
+  void startGame() {
+    initializeCanvas();
+    Element entryPoint = querySelector('#output')!;
+
+    entryPoint.appendChild(board);
+    entryPoint.appendChild(gameScore);
+
+    Timer.periodic(const Duration(milliseconds: 500), gameLoop);
+
+    getRandomTetromino();
+    handleKeyboard(Timer(const Duration(milliseconds: 100), () {}));
+  }
 }
