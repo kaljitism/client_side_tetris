@@ -5,7 +5,8 @@ I Block
 = = = =
 */
 class ITetromino extends Tetromino {
-  ITetromino(super.tiles, super.axisOfRotationTile, super.color, int width) {
+  ITetromino(super.tiles, super.axisOfRotationTile, super.color,
+      {required int width}) {
     final int axisX = width ~/ 2;
     final int axisY = -1;
     tiles[0] = Tile(axisX - 1, axisY);
@@ -25,7 +26,8 @@ O Block
 = =
 */
 class OTetromino extends Tetromino {
-  OTetromino(super.tiles, super.axisOfRotationTile, super.color, int width) {
+  OTetromino(super.tiles, super.axisOfRotationTile, super.color,
+      {required int width}) {
     final int axisX = width ~/ 2;
     final int axisY = -1;
 
@@ -46,7 +48,8 @@ J Block
 = = =
 */
 class JTetromino extends Tetromino {
-  JTetromino(super.tiles, super.axisOfRotationTile, super.color, int width) {
+  JTetromino(super.tiles, super.axisOfRotationTile, super.color,
+      {required int width}) {
     final int axisX = width ~/ 2;
     final int axisY = 0;
 
@@ -67,7 +70,8 @@ L Block
 = = =
 */
 class LTetromino extends Tetromino {
-  LTetromino(super.tiles, super.axisOfRotationTile, super.color, int width) {
+  LTetromino(super.tiles, super.axisOfRotationTile, super.color,
+      {required int width}) {
     final int axisX = width ~/ 2;
     final int axisY = 0;
 
@@ -88,7 +92,8 @@ T Block
 = = =
 */
 class TTetromino extends Tetromino {
-  TTetromino(super.tiles, super.axisOfRotationTile, super.color, int width) {
+  TTetromino(super.tiles, super.axisOfRotationTile, super.color,
+      {required int width}) {
     final int axisX = width ~/ 2;
     final int axisY = 0;
 
@@ -109,7 +114,8 @@ Z Block
   = =
 */
 class ZTetromino extends Tetromino {
-  ZTetromino(super.tiles, super.axisOfRotationTile, super.color, int width) {
+  ZTetromino(super.tiles, super.axisOfRotationTile, super.color,
+      {required int width}) {
     final int axisX = width ~/ 2;
     final int axisY = 0;
 
@@ -130,7 +136,8 @@ S Block
 = =
 */
 class STetromino extends Tetromino {
-  STetromino(super.tiles, super.axisOfRotationTile, super.color, int width) {
+  STetromino(super.tiles, super.axisOfRotationTile, super.color,
+      {required int width}) {
     final int axisX = width ~/ 2;
     final int axisY = 0;
 
