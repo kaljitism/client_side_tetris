@@ -1,9 +1,9 @@
 part of '../../tetris.dart';
 
 class Game {
-  CanvasElement? canvas;
-  Element? gameScore;
-  Tetromino? currentTetromino;
+  late CanvasElement board;
+  late Element gameScore;
+  late Tetromino currentTetromino;
 
   static late int width;
   static late int height;
@@ -126,35 +126,21 @@ class Game {
       });
       clearRows();
       getRandomTetromino();
+      if (!movePiece(Movement.down)) {
+        timer.cancel();
+        window.alert('Game Over');
+      }
     }
   }
 
+  void initializeCanvas() {
+    board = CanvasElement();
+    board.width = cellSize * width;
+    board.height = cellSize * height;
 
+    ctx = board.context2D;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-_
-  //
+    ctx.fillStyle = 'grey' as JSAny;
+    ctx.fillRect(0, 0, board.width, board.height);
+  }
 }
